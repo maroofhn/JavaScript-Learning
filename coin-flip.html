@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Coin Flip Game </title>
+    </head>
+    <body>
+        <script>
+            let result=''
+            let randnum=Math.random();
+            console.log(`The Number Generated is ${randnum}`);
+            // let coinside=(randnum<0.5) ? console.log('Heads') : console.log('Tails')
+            if (randnum<0.5){
+                result='Heads'
+                console.log('Heads')
+            } else {
+                result='Tails'
+                console.log('Tails')
+            }
+            let guess=prompt("What is your guess? Heads or Tails?")
+            let result2=(guess==result) ? console.log('Winner!') : console.log('Lost.')
+        </script>
+    </body>
+</html>
