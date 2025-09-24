@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Park Discount Checker</title>
+    </head>
+    <body>
+        <script>
+            // isHoliday is constant set
+            const isHoliday=false;
+
+            // Taking input from user
+            let age=prompt('Enter your age:');
+            console.log(`User Age is ${age}`);
+
+            // Checking if age falls into discount bracket and isHoliday is true.
+            if ((age<=6 || age>=65) && (isHoliday==true)) {
+                console.log("User qualifies for discount")
+                window.alert("Yes Discount!")
+            } else {
+                console.log("User does not qualify for discount")
+                window.alert("No Discount!")
+            };
+        </script>
+    </body>
+</html>
