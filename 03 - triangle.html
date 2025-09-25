@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Symbol Triangle Generator</title>
+    </head>
+    <body>
+        <input type="text" id="myInput" placeholder="! @ # $ % ^ & *">
+        <button onclick="trianglegen()">Get Triangle</button>
+
+        <script>
+            function getValue() {
+                return document.getElementById("myInput").value;
+            }
+
+            function trianglegen(){
+                let symbol = getValue();
+                const rows = 5;
+
+                // Creates 5 lines of empty string
+                for (let i = 1; i <= 5; i++) {
+                let line = '';
+                
+                // Adds spacing to lines
+                for (let j = 1; j <= rows - i; j++) {
+                    line += ' ';
+                }
+                
+                // Fills lines with symbola
+                for (let k = 1; k <= (2 * i - 1); k++) {
+                    line += symbol;
+                }
+                
+                console.log(line);
+                }
+            }
+
+
+        </script>
+    </body>
+</html>
