@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Counting Vowels</title>
+    </head>
+    <body>
+        <script>
+            let word = "education";
+            let count = 0;
+
+            for (let i = 0; i < word.length; i++) {
+            let ch = word[i];
+            if (ch === "a" || ch === "e" || ch === "i" || ch === "o" || ch === "u") {
+                count = count + 1;
+            }
+            }
+
+            console.log(count);
+
+        </script>
+    </body>
+</html>
