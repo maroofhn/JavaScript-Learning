@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Output Marks</title>
+    </head>
+    <body>
+        <script>
+
+            // Create an object marks with subject names as keys and scores as values. Use a for...in loop to print each subject with its score.Also, calculate the total score.
+            
+            let marks = {
+            Math: 85,
+            English: 90,
+            Science: 78,
+            History: 88
+            };
+
+            let total = 0;
+
+            for (let subject in marks) {
+            console.log(subject + ": " + marks[subject]);
+            total += marks[subject];
+            }
+
+            console.log("Total Marks: " + total);
+            
+        </script>
+    </body>
+</html>
