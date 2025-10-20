@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors Game 3</title>
+    </head>
+    <body>
+        <button onclick="
+            var ReturnComputer = CalculateComputerMove();
+            var theresult = '';
+            var player = 'Rock';
+
+            if (ReturnComputer === player) {
+                theresult = 'Tie';
+                sc.ties++;
+            } else if (ReturnComputer === 'Paper') {
+                theresult = 'You lose.';
+                sc.losses++;
+            } else {
+                theresult = 'You Win.';
+                sc.wins++;
+            }
+
+            localStorage.setItem('sc', JSON.stringify(sc));
+            alert(`You picked ${player}. The Computer picked ${ReturnComputer}. Hence ${theresult}`);
+            displayScore();
+        ">Rock</button>
+
+        <button onclick="
+            var ReturnComputer = CalculateComputerMove();
+            var theresult = '';
+            var player = 'Paper';
+
+            if (ReturnComputer === player) {
+                theresult = 'Tie';
+                sc.ties++;
+            } else if (ReturnComputer === 'Scissor') {
+                theresult = 'You lose.';
+                sc.losses++;
+            } else {
+                theresult = 'You Win.';
+                sc.wins++;
+            }
+
+            localStorage.setItem('sc', JSON.stringify(sc));
+            alert(`You picked ${player}. The Computer picked ${ReturnComputer}. Hence ${theresult}`);
+            displayScore();
+        ">Paper</button>
+
+        <button onclick="
+            var ReturnComputer = CalculateComputerMove();
+            var theresult = '';
+            var player = 'Scissor';
+
+            if (ReturnComputer === player) {
+                theresult = 'Tie';
+                sc.ties++;
+            } else if (ReturnComputer === 'Rock') {
+                theresult = 'You lose.';
+                sc.losses++;
+            } else {
+                theresult = 'You Win.';
+                sc.wins++;
+            }
+
+            localStorage.setItem('sc', JSON.stringify(sc));
+            alert(`You picked ${player}. The Computer picked ${ReturnComputer}. Hence ${theresult}`);
+            displayScore();
+        ">Scissors</button>
+
+        <button onclick="
+            sc = {wins: 0, losses: 0, ties: 0};
+            localStorage.setItem('sc', JSON.stringify(sc));
+            displayScore();
+        ">Reset Score</button>
+
+        <p class="scores-p"></p>
+
+        <script>
+            let sc = JSON.parse(localStorage.getItem('sc')) || {
+                wins: 0,
+                losses: 0,
+                ties: 0
+            };
+
+            function CalculateComputerMove() {
+                let randnum = Math.random();
+                if (randnum < 1/3) {
+                    return 'Rock';
+                } else if (randnum < 2/3) {
+                    return 'Paper';
+                } else {
+                    return 'Scissor';
+                }
+            }
+
+            function displayScore() {
+                document.querySelector('.scores-p').textContent = 
+                `Wins: ${sc.wins}, Losses: ${sc.losses}, Ties: ${sc.ties}`;
+            }
+
+            // Display score on page load
+            displayScore();
+        </script>
+    </body>
+</html>
